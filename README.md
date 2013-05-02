@@ -5,16 +5,10 @@ A dark color theme for Emacs 24+ (using deftheme), inspired by the default dark 
 
 This is still pretty rough around the edges; I think some color tweaks are still needed, and pull requests are definitely welcome.
 
-Screenshots
-===========
+Screenshot
+==========
 
 ![Showing ido and some syntax highlighting](http://i.imgur.com/M3DPhCh.png)
-
-Ido find file and some elisp.
-
-![Some java code](http://i.imgur.com/BjixPX3.png)
-
-Some example syntax highlighting.
 
 Setup
 -----
