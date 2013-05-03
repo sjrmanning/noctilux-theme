@@ -56,11 +56,11 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
 (defvar noctilux-colors           ; ANSI(Noctilux terminal)
   ;; name     sRGB      Gen RGB   256       16              8
   '((base03  "#202020" "#202020" "#202020" "brightblack"   "black")
-    (base02  "#262626" "#262626" "#262626" "black"         "black")
-    (base01  "#555555" "#555555" "#555555" "brightgreen"   "green")
+    (base02  "#292929" "#292929" "#292929" "black"         "black")
+    (base01  "#5f5f5f" "#5f5f5f" "#5f5f5f" "brightgreen"   "green")
     (base00  "#999999" "#999999" "#999999" "brightyellow"  "yellow")
     (base0   "#cccccc" "#cccccc" "#cccccc" "brightblue"    "blue")
-    (base1   "#cccccc" "#cccccc" "#cccccc" "brightcyan"    "cyan")
+    (base1   "#aaaaaa" "#aaaaaa" "#aaaaaa" "brightcyan"    "cyan")
     (base2   "#e9e2cb" "#e9e2cb" "#e9e2cb" "white"         "white")
     (base3   "#fcf4dc" "#fcf4dc" "#fcf4dc" "brightwhite"   "white")
     (yellow  "#aaeecc" "#aaeecc" "#aaeecc" "yellow"        "yellow")
@@ -194,7 +194,7 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (menu ((t (,@fg-base0 ,@bg-base02))))
              (minibuffer-prompt ((t (,@fmt-bold ,@fg-cyan)))) ; Question
              (mode-line  ; StatusLine
-              ((t (,@fg-base1 ,@bg-base02 ,@fmt-revbb :box nil))))
+              ((t (,@fg-base0,@bg-base02 ,@fmt-revbb :box nil))))
              (mode-line-inactive ; StatusLineNC
               ((t (,@fg-base00 ,@bg-base02 ,@fmt-revbb :box nil))))
              (region ((t (,@fg-base01 ,@bg-base03 ,@fmt-revbb)))) ; Visual
