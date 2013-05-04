@@ -76,8 +76,12 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
    column is a different set, one of which will be chosen based on term
    capabilities, etc.")
 
+(defmacro noct-flet (specs &rest body)
+  (let ((flet (if (fboundp 'cl-flet) 'cl-flet 'flet)))
+    `(,flet ,specs ,@body)))
+
 (defun noctilux-color-definitions (mode)
-  (flet ((find-color (name)
+  (noct-flet ((find-color (name)
            (let* ((index (if window-system
                              (if noctilux-degrade
                                  3
