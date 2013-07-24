@@ -179,7 +179,9 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
               (fmt-revr `(:weight normal :slant normal  :underline nil        :inverse-video t))
               (fmt-revb `(:weight ,bold  :slant normal  :underline nil        :inverse-video t))
               (fmt-revbb `(:weight ,bright-bold :slant normal :underline nil  :inverse-video t))
-              (fmt-revbbu `(:weight ,bright-bold :slant normal  :underline ,underline :inverse-video t)))
+              (fmt-revbbu `(:weight ,bright-bold :slant normal  :underline ,underline :inverse-video t))
+              (fmt-redwave `(:underline (:color ,red :style wave) :inherit default))
+              (fmt-orangewave `(:underline (:color ,orange :style wave) :inherit default)))
           `((;; basic
              (default ((t (,@fg-base0 ,@bg-back)))) ; Normal
              (cursor ((t (,@fg-base03 ,@bg-white)))) ; Cursor
@@ -358,9 +360,8 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
 	     (bm-fringe-face ((t (,@bg-orange ,@fg-base03))))
 	     (bm-fringe-persistent-face ((t (,@bg-blue ,@fg-base03))))
              ;; Flymake
-             (flymake-errline ((t (,@fmt-revr ,@fg-red ,@bg-back)))) ; ErrorMsg
-             (flymake-warnline ; WarningMsg
-              ((t (,@fmt-bold ,@fg-red ,@bg-back))))
+             (flymake-errline ((t (,@fmt-redwave)))) ; ErrorMsg
+             (flymake-warnline ((t (,@fmt-orangewave)))) ; WarningMsg
              ;; column-marker
              (column-marker-1 ((t (,@bg-base01))))
              (column-marker-2 ((t (,@bg-cyan))))
