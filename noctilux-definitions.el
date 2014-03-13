@@ -524,6 +524,20 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              ;;flyspell
              (flyspell-incorrect ((t (,@fg-red))))
              (flyspell-duplicate ((t (,@fg-yellow))))
+             ;; company-mode
+             (company-tooltip ((t (,@fg-base0 ,@bg-base02))))
+             (company-tooltip-selection ((t (,@fg-base0 ,@bg-base01))))
+             (company-tooltip-mouse ((t (,@bg-base02))))
+             (company-tooltip-common ((t (,@bg-base02 ,@fg-violet))))
+             (company-tooltip-common-selection ((t (,@fg-violet ,@bg-base01))))
+             (company-tooltip-annotation ((t (,@fg-base0 ,@bg-base02))))
+             (company-scrollbar-fg ((t (,@bg-base01))))
+             (company-scrollbar-bg ((t (,@bg-base3))))
+             (company-preview ((t (,@fg-base0 ,@bg-base01))))
+             (company-preview-common ((t (,@fg-base0 ,@bg-base01))))
+             (company-preview-search ((t (,@fg-violet ,@bg-base01))))
+             (company-echo ((t nil)))
+             (company-echo-common ((t (,@fg-violet))))
 	     ;;ansi-term
 	     (term-color-black ((t ( ,@fg-base02))))
 	     (term-color-red ((t ( ,@fg-red))))
