@@ -39,10 +39,10 @@ down in order to expand or compress the tonal range displayed."
   :options '(high normal low)
   :group 'lt)
 
-(defcustom noctilux-broken-srgb (if (and (eq system-type 'darwin)
-                                          (eq window-system 'ns))
-                                     t
-                                   nil)
+(defcustom noctilux-broken-srgb (and (eq system-type 'darwin)
+                                     (eq window-system 'ns)
+                                     (not (when (boundp 'ns-use-srgb-colorspace)
+                                            ns-use-srgb-colorspace)))
   "Emacs bug #8402 results in incorrect color handling on Macs. If this is t
 \(the default on Macs), Noctilux works around it with alternative colors.
 However, these colors are not totally portable, so you may be able to edit
