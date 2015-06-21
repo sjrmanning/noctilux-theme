@@ -312,6 +312,10 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (font-lock-other-emphasized-face ((t (,@fmt-bldi ,@fg-violet))))
              (font-lock-regexp-grouping-backslash
               ((t (,@fmt-none ,@fg-yellow))))
+             ;; helm
+             (helm-source-header ((t (,@fmt-bold ,@fg-cyan))))
+             (helm-selection ((t (,@fg-green ,@bg-base01))))
+             (helm-visible-mark ((t (,@bg-blue))))
              ;; info
              (info-xref ((t (,@fmt-undr ,@fg-blue))))
              (info-xref-visited ((t (,@fg-magenta :inherit info-xref))))
