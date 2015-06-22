@@ -511,6 +511,24 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (slime-repl-output-mouseover-face ((t (:box (:color ,base3)))))
              (slime-style-warning-face ((t (,@fmt-bold ,@fg-orange))))
              (slime-warning-face ((t (,@fmt-bold ,@fg-red)))) ; WarningMsg
+             ;; smart-mode-line
+             ; use (setq sml/theme nil) for these settings
+             (sml/filename ((t (,@fmt-bold ,@fg-green))))
+             (sml/prefix ((t (,@fmt-none ,@fg-cyan))))
+             (sml/git ((t (,@fmt-none ,@fg-orange))))
+             (sml/process ((t (,@fg-cyan))))
+             (sml/sudo ((t (,@fmt-bold ,@fg-red))))
+             (sml/read-only ((t (,@fmt-none ,@fg-yellow))))
+             (sml/outside-modified ((t (,@fmt-none ,@fg-violet))))
+             (sml/modified ((t (,@fg-red))))
+             (sml/vc-edited ((t (,@fg-orange))))
+             (sml/charging ((t (,@fg-yellow))))
+             (sml/discharging ((t (,@fg-magenta))))
+             (sml/line-number ((t (,@fmt-none ,@fg-base3))))
+             (sml/col-number ((t (,@fmt-none ,@fg-base2))))
+             (sml/numbers-separator ((t (,@fmt-none ,@fg-base01))))
+             (sml/folder ((t (,@fmt-none ,@fg-blue))))
+             (sml/minor-modes ((t (,@fg-base01))))
              ;; whitespace
              (whitespace-empty ((t (,@fg-red))))
              (whitespace-hspace ((t (,@fg-orange))))
