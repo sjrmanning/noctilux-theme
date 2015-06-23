@@ -79,7 +79,6 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
 (defmacro noct-flet (specs &rest body)
   (let ((flet (if (fboundp 'cl-flet) 'cl-flet 'flet)))
     `(,flet ,specs ,@body)))
-
 (defun noctilux-color-definitions (mode)
   (noct-flet ((find-color (name)
            (let* ((index (if window-system
@@ -171,6 +170,7 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
               (fmt-undb `(:weight ,bold  :slant normal  :underline ,underline :inverse-video nil))
               (fmt-undi `(:weight normal                :underline ,underline :inverse-video nil))
               (fmt-uopt `(:weight normal :slant normal  :underline ,opt-under :inverse-video nil))
+              (fmt-bb  `(:weight ,bright-bold :slant normal :underline nil    :inverse-video nil))
               ;; FIXME: not quite the same
               (fmt-curl `(:weight normal :slant normal  :underline t          :inverse-video nil))
               (fmt-ital `(:weight normal :slant ,italic :underline nil        :inverse-video nil))
@@ -200,9 +200,9 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (menu ((t (,@fg-base0 ,@bg-base02))))
              (minibuffer-prompt ((t (,@fmt-bold ,@fg-cyan)))) ; Question
              (mode-line  ; StatusLine
-              ((t (,@fg-base0,@bg-base02 ,@fmt-revbb :box nil))))
+              ((t (,@fg-base0,@bg-base02 ,@fmt-bb :box nil))))
              (mode-line-inactive ; StatusLineNC
-              ((t (,@fg-base00 ,@bg-base02 ,@fmt-revbb :box nil))))
+              ((t (,@fg-base01 ,@bg-base03 ,@fmt-bb :box nil))))
              (region ((t (,@fg-base01 ,@bg-base03 ,@fmt-revbb)))) ; Visual
              (secondary-selection ((t (,@bg-base02))))
              (shadow ((t (,@fg-base01))))
@@ -512,23 +512,31 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (slime-style-warning-face ((t (,@fmt-bold ,@fg-orange))))
              (slime-warning-face ((t (,@fmt-bold ,@fg-red)))) ; WarningMsg
              ;; smart-mode-line
-             ; use (setq sml/theme nil) for these settings
-             (sml/filename ((t (,@fmt-bold ,@fg-green))))
-             (sml/prefix ((t (,@fmt-none ,@fg-cyan))))
-             (sml/git ((t (,@fmt-none ,@fg-orange))))
-             (sml/process ((t (,@fg-cyan))))
-             (sml/sudo ((t (,@fmt-bold ,@fg-red))))
-             (sml/read-only ((t (,@fmt-none ,@fg-yellow))))
-             (sml/outside-modified ((t (,@fmt-none ,@fg-violet))))
-             (sml/modified ((t (,@fg-red))))
-             (sml/vc-edited ((t (,@fg-orange))))
+             ; use (setq sml/theme nil) for these settings to take effect
              (sml/charging ((t (,@fg-yellow))))
+             (sml/client ((t (,@fg-violet))))
+             (sml/col-number ((t (,@fmt-bb ,@fg-base2))))
              (sml/discharging ((t (,@fg-magenta))))
-             (sml/line-number ((t (,@fmt-none ,@fg-base3))))
-             (sml/col-number ((t (,@fmt-none ,@fg-base2))))
-             (sml/numbers-separator ((t (,@fmt-none ,@fg-base01))))
+             (sml/filename ((t (,@fmt-bold ,@fg-green))))
              (sml/folder ((t (,@fmt-none ,@fg-blue))))
-             (sml/minor-modes ((t (,@fg-base01))))
+             (sml/git ((t (,@fmt-none ,@fg-orange))))
+             (sml/global ((t (,@fg-base1))))
+             (sml/line-number ((t (,@fmt-bb ,@fg-base3))))
+             (sml/minor-modes ((t (,@fmt-none ,@fg-base01))))
+             (sml/modes ((t (,@fmt-bb ,@fg-base3))))
+             (sml/modified ((t (,@fg-red))))
+             (sml/numbers-separator ((t (,@fmt-none ,@fg-base01))))
+             (sml/name-filling ((t (,@fg-cyan))))
+             (sml/numbers-separator ((t (,@fg-base00))))
+             (sml/outside-modified ((t (,@fmt-none ,@fg-red))))
+             (sml/position-percentage ((t (,@fmt-bb ,@fg-violet))))
+             (sml/prefix ((t (,@fmt-none ,@fg-cyan))))
+             (sml/process ((t (,@fg-cyan))))
+             (sml/read-only ((t (,@fmt-none ,@fg-yellow))))
+             (sml/sudo ((t (,@fmt-bold ,@fg-red))))
+             (sml/time ((t (,@fmt-bold ,@fg-base3))))
+             (sml/vc ((t (,@fg-green))))
+             (sml/vc-edited ((t (,@fg-orange))))
              ;; whitespace
              (whitespace-empty ((t (,@fg-red))))
              (whitespace-hspace ((t (,@fg-orange))))
