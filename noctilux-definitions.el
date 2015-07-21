@@ -321,6 +321,8 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (helm-buffer-process ((t (,@fg-blue))))
              (helm-buffer-saved-out ((t (,@fg-cyan))))
              (helm-buffer-size ((t (,@fg-magenta))))
+             (helm-candidate-number ((t (,@fmt-bold ,@fg-red ,@bg-base02))))
+             (helm-header-line-left-margin ((t ,@fg-red)))
              (helm-ff-directory ((t (,@fmt-bold ,@fg-yellow))))
              (helm-ff-dotted-directory ((t (,@fg-red))))
              (helm-ff-executable ((t (,@fmt-bold ,@fg-base0))))
@@ -331,7 +333,7 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (helm-match ((t (,@fmt-undr ,@fg-red))))
              (helm-selection ((t (,@fg-green ,@bg-base01))))
              (helm-source-header ((t (,@fmt-bold ,@fg-cyan))))
-             (helm-visible-mark ((t (,@bg-blue))))
+             (helm-visible-mark ((t (,@fg-blue ,@bg-base02))))
              ;; info
              (info-xref ((t (,@fmt-undr ,@fg-blue))))
              (info-xref-visited ((t (,@fg-magenta :inherit info-xref))))
@@ -482,6 +484,9 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
               ((t (,@fmt-none ,@fg-blue))))
              (gnus-summary-selected ; indicator
               ((t (,@fmt-none ,@fg-base03 ,@bg-yellow))))
+             ;; magit
+             (magit-header-line ((t ,@fmt-bold ,@fg-blue)))
+             (magit-section-heading ((t ,@fmt-bb ,@fg-cyan)))
              ;; Message
              (message-mml ((t (,@fg-blue))))
              (message-cited-text ((t (,@fg-base2))))
@@ -564,6 +569,11 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (erc-nick-defaunoctilux-face ((t (,@fmt-none ,@fg-cyan))))
              (erc-notice-face ((t (,@fmt-none ,@fg-blue))))
              (erc-timestamp-face ((t (:foreground ,base01))))
+             ;; evil
+             (evil-ex-lazy-highlight ((t :inherit lazy-highlight)))
+             (evil-ex-search ((t :inherit isearch)))
+             (evil-ex-substitute-matches ((t ,@fg-orange)))
+             (evil-ex-substitute-replacement ((t ,@fmt-undr ,@fg-red)))
              ;;font-latex
              (font-latex-warning-face ((t (,@fg-red))))
              (font-latex-sectioning-5-face ((t (,@fg-violet))))
